@@ -4,4 +4,9 @@ class LibrariesController < ApplicationController
   def index
     @sorted_libraries = Library.sort_by_rating
   end
+
+  def new
+    @library = Library.new
+    @book = Book.new
+  end
 end

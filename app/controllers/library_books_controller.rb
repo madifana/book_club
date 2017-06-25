@@ -6,4 +6,11 @@ class LibraryBooksController < ApplicationController
     @library_books = LibraryBook.where(library_id: @library_id)
   end
 
+  def update
+    @library_books = @library.library_books
+    @bk = @library_books.find_by(book_id: params[:id])
+    @bk.update(library_books_params)
+    redirect_to library_path(@library.id)
+  end
+
 end

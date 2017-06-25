@@ -13,4 +13,10 @@ class LibraryBooksController < ApplicationController
     redirect_to library_path(@library.id)
   end
 
+  def edit
+    @library_book = @library.library_books
+    @bk = @library_book.find_by(book_id: params[:id])
+  end
+
+
 end

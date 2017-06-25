@@ -30,4 +30,15 @@ class LibrariesController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @library = Library.find(params[:id])
+    @comment = Comment.new
+  end
+
+  private
+
+  def library_params
+    params.require(:library).permit(:user_id, :name, :rating, :description, book_ids: [], books_attributes: [:book_name])
+  end
 end

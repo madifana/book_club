@@ -19,4 +19,15 @@ class LibrariesController < ApplicationController
     @book.update(book_params)
     redirect_to library_path(@library)
   end
+
+  def create
+    @library = Library.create(library_params)
+
+    if @library.save
+      redirect_to library_path(@library)
+    else
+      @message = @library.errors.full_messages
+      render :new
+    end
+  end
 end

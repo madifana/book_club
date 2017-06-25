@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :libraries
   resources :library_books
   resources :books
   resources :comments

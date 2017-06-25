@@ -9,4 +9,8 @@ class LibrariesController < ApplicationController
     @library = Library.new
     @book = Book.new
   end
+
+  def edit
+    @library = Library.find(params[:id])
+  end
 end

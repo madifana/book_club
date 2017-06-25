@@ -18,5 +18,13 @@ class LibraryBooksController < ApplicationController
     @bk = @library_book.find_by(book_id: params[:id])
   end
 
+  private
 
+  def library_finder
+    @library = Library.find(params[:library_id])
+  end
+
+  def library_books_params
+    params.permit(:quantity)
+  end
 end

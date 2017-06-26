@@ -1,11 +1,11 @@
 <div class="row">
   <div class='col-md-12 text-center'>
-    <h1><%= @recipe.name.capitalize %> Comments</h1>
+    <h1><%= @library.name.capitalize %> Comments</h1>
   </div>
 </div>
 <div class="row" id='lol'>
   <div class="col-md-12 text-center mainBox">
-    <% @recipe.comments.each do |comment| %>
+    <% @library.comments.each do |comment| %>
       <p class='well'><%= comment.content %><br>
       - <%= comment.user.name %></p>
     <% end %>

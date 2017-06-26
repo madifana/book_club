@@ -5,7 +5,7 @@
 </div>
 <div class="row">
   <div class='col-span-12 text-center'>
-    <% @sorted_libraries.each do |libraries| %>
+    <% @sorted_libraries.each do |library| %>
       <% if library.user_id == current_user.id %>
         <h4><%= link_to library.name.capitalize, library_path(library) %></h4>
       <% end %>

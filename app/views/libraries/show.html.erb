@@ -29,3 +29,16 @@
     <h4 id="link"></h4>
   </div>
 </div>
+
+<% content_for :comments do %>
+  <script>
+    $(function(){
+      indexer();
+    })
+    function indexer(){
+      $("#header").html("Comments");
+      $("#question").html("Want to add a comment?")
+      $("#link").html('<%= link_to "Click Here", library_comments_path(@library.id, @comment), id: :comments %>')
+    };
+  </script>
+<% end %>

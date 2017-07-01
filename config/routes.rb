@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'users#index'
-  resources :libraries
+  #resources :libraries
   resources :library_books
   resources :books
   resources :comments

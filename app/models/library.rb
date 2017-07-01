@@ -22,5 +22,4 @@ class Library < ApplicationRecord
   def self.sort_by_rating
     Library.order(rating: :desc)
   end
-
 end

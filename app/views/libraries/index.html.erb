@@ -5,19 +5,19 @@
 </div>
 <div class="row">
   <div class='col-span-12 text-center'>
-    <% @sorted_libraries.each do |library| %>
+    <% @libraries.each do |library| %>
       <% if library.user_id == current_user.id %>
         <h4><%= link_to library.name.capitalize, library_path(library) %></h4>
       <% end %>
     <% end %>
-    <button type="button" class="btn btn-primary"><%= link_to "Add a library", new_library_path , {:style=>'color:#FFFFFF;', :class => "css_class"} %></button>
+    <button type="button" class="btn btn-primary"><%= link_to "Add a library", new_library_path , {:style=>'color:#800000;', :class => "css_class"} %></button>
   </div>
 </div>
 <div class="row">
   <div class='col-span-12 text-center'>
 
     <h2>All Libraries</h2>
-    <% @sorted_libraries.each do |library| %>
+    <% @libraries.each do |library| %>
       <h4><%= link_to library.name.capitalize, library_path(library) %></h4>
       <h5>by <%= library.user.name %></h5>
     <% end %>

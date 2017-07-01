@@ -2,7 +2,7 @@ class LibrariesController < ApplicationController
   before_action :auth_user
 
   def index
-    @sorted_libraries = Library.sort_by_rating
+    @libraries = Library.all
   end
 
   def new

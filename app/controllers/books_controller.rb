@@ -3,10 +3,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
-    respond_to do |format|
-      format.html {render :index}
-      format.json {render json: @books}
-    end
+    render 'index'
   end
 
   def new

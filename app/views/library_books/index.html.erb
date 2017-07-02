@@ -10,7 +10,7 @@
   <div class='col-md-12 text-center'>
     <%= form_tag library_library_book_path(library.library_id, library.library_id), :method => :put do |f| %>
       <%= label_tag (:quantity) %>
-      <%= text_field_tag "quantity", library.quantity %>
+      <%= text_field_tag "quantity", library_books.quantity %>
       <%= submit_tag("Update") %>
       <% end %>
     <% end %>

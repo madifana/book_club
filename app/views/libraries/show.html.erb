@@ -12,7 +12,7 @@
     <h2>Books</h2>
 
     <% @library.library_books.each do |bk| %>
-    <%= link_to bk.book.book_name.capitalize, edit_library_library_book_path(library_id: bk.library_id, id: bk.book_id) %> | # of times read: <%=bk.quantity %><br>
+    <%= link_to bk.book.book_name.capitalize, edit_library_library_book_path(library_id: bk.library_id, id: bk.book_id) %> | # of times read: <%= bk.quantity %><br>
     <% end %>
     <h7><%= link_to "Edit", edit_library_path(@library) %></h7><br>
   </div>

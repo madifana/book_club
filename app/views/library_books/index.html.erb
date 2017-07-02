@@ -1,0 +1,20 @@
+
+<% @library_books.each do |library| %>
+<div class="row">
+  <div class='col-md-12 text-center'>
+    <h1><%= library.book.book_name %></h1>
+    <p>Update the number of times you have read this book.</p>
+  </div>
+</div>
+<div class="row">
+  <div class='col-md-12 text-center'>
+    <%= form_tag library_library_book_path(library.library_id, library.library_id), :method => :put do |f| %>
+      <%= label_tag (:quantity) %>
+      <%= text_field_tag "quantity", library_books.quantity %>
+      <%= submit_tag("Update") %>
+      <% end %>
+    <% end %>
+    <h6>The number listed in the box is how many times you have read this book.</h6>
+    <h6>If you leave it blank, it will default to zero.</h6>
+  </div>
+</div>

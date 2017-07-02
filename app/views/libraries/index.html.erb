@@ -3,3 +3,23 @@
     <h2>Your Libraries</h2>
   </div>
 </div>
+<div class="row">
+  <div class='col-span-12 text-center'>
+    <% @libraries.each do |library| %>
+      <% if library.user_id == current_user.id %>
+        <h4><%= link_to library.name.capitalize, library_path(library) %></h4>
+      <% end %>
+    <% end %>
+    <button type="button" class="btn btn-primary"><%= link_to "Add a library", new_library_path , {:style=>'color:#800000;', :class => "css_class"} %></button>
+  </div>
+</div>
+<div class="row">
+  <div class='col-span-12 text-center'>
+
+    <h2>All Libraries</h2>
+    <% @libraries.each do |library| %>
+      <h4><%= link_to library.name.capitalize, library_path(library) %></h4>
+    <% end %>
+    <%= render 'layouts/navigation' %>
+  </div>
+</div>

@@ -8,6 +8,8 @@ class Library < ApplicationRecord
   validates :name, uniqueness: true
   validates :description, presence: true
 
+  accepts_nested_attributes_for :books
+
   def books_attributes=(books_attributes)
     if books_attributes.values[0]["book_name"] != ""
       books_attributes.values.each do |book_attribute|
@@ -20,5 +22,4 @@ class Library < ApplicationRecord
   def self.sort_by_rating
     Library.order(rating: :desc)
   end
-
 end

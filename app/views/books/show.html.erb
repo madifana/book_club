@@ -1,0 +1,17 @@
+<div class="row">
+  <div class='col-md-12 text-center'>
+    <h2><%= @book.book_name.capitalize %></h2>
+    <p>Below are some libraries that contain your book.</p>
+  </div>
+</div>
+<div class="row">
+  <div class='col-md-12 text-center'>
+    <% @book.libraries.each do |library| %>
+       <%= link_to library.name.capitalize, library_path(library), id: :library %><br>
+       <h1 id='library-<%= library.id %>'></h1>
+       <p id='library-<%= library.id %>'></p>
+    <% end %>
+
+    <%= render 'layouts/navigation' %>
+  </div>
+</div>

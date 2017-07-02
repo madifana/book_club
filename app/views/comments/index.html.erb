@@ -1,0 +1,39 @@
+<div class="row">
+  <div class='col-md-12 text-center'>
+    <h1><%= @library.name.capitalize %> Comments</h1>
+  </div>
+</div>
+<div class="row" id='lol'>
+  <div class="col-md-12 text-center mainBox">
+    <% @library.comments.each do |comment| %>
+      <p class='well'><%= comment.content %><br>
+      - <%= comment.user.name %></p>
+    <% end %>
+
+  </div>
+</div>
+<div class="row">
+  <div class='col-md-12 text-center'>
+    <% if @message %>
+    <% @message.each do |message| %>
+    <div class='alert alert-danger'>
+      <%= message %>
+    </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class='col-md-12 text-center'>
+    <span class='error'></span>
+    <div id='new_comment'>
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class='col-md-12 text-center'>
+    <%= link_to "Back", :back %>
+  </div>
+</div>

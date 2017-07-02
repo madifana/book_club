@@ -2,7 +2,7 @@ class LibrariesController < ApplicationController
   before_action :auth_user
 
   def index
-    @sorted_libraries = Library.sort_by_rating
+    @libraries = Library.all
   end
 
   def new
@@ -16,7 +16,7 @@ class LibrariesController < ApplicationController
 
   def update
     @library = Library.find(params[:id])
-    @book.update(book_params)
+    @library.update(library_params)
     redirect_to library_path(@library)
   end
 
@@ -34,6 +34,10 @@ class LibrariesController < ApplicationController
   def show
     @library = Library.find(params[:id])
     @comment = Comment.new
+    respond_to do |format|
+      format.html {render :show}
+      format.json {render json: @recipe}
+    end
   end
 
   private

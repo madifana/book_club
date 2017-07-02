@@ -1,0 +1,33 @@
+<div class="row">
+  <div class='col-md-12 text-center'>
+    <h1><%= @library.name %></h1>
+  </div>
+</div>
+<div class="row well">
+  <div class='col-md-12 text-center'>
+    <h2>Info</h2>
+    <p>Description: <%= @library.description.capitalize %><p>
+    <p>Rating: <%= @library.rating %> out of 5</p>
+
+    <h2>Books</h2>
+
+    <% @library.library_books.each do |bk| %>
+    <%= link_to bk.book.book_name.capitalize, edit_library_library_book_path(library_id: bk.library_id, id: bk.book_id) %> | # of times read: <%= bk.quantity %><br>
+    <% end %>
+    <h7><%= link_to "Edit", edit_library_path(@library) %></h7><br>
+  </div>
+</div>
+
+<div class="row well">
+  <div class='col-md-12 text-center'>
+    <h2 id="header"></h2>
+    <% @library.comments.each do |comment| %>
+      <p class="well"><%= comment.content %><br>
+      - <%= comment.user.name %></p>
+    <% end %>
+    <h4 id="question"></h4>
+    <h4 id="link"></h4>
+  </div>
+</div>
+
+<%= render 'layouts/navigation' %>

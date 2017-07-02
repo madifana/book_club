@@ -1,0 +1,25 @@
+<div class="row">
+  <div class='col-md-12 text-center'>
+    <h1>Add a Book</h1>
+  </div>
+</div>
+<div class="row">
+  <div class='col-md-12 text-center'>
+    <% if @message %>
+    <% @message.each do |message| %>
+    <div class='alert alert-danger'>
+      <%= message %>
+    </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class='col-md-12 text-center'>
+    <%= form_for @book do |f| %>
+    <%= f.label :book_name %>
+    <%= f.text_field :book_name %>
+    <%= f.submit %>
+    <% end %>
+  </div>
+</div>

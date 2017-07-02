@@ -19,7 +19,6 @@
     <h2>All Libraries</h2>
     <% @libraries.each do |library| %>
       <h4><%= link_to library.name.capitalize, library_path(library) %></h4>
-      <h5>by <%= library.user.name %></h5>
     <% end %>
   </div>
 </div>

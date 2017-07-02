@@ -9,7 +9,7 @@
 
     <%= form_tag library_library_book_path(library_id: @bk.library_id, id: @bk.book_id), :method => :put do |f| %>
       <%= label_tag (:quantity) %>
-      <%= text_field_tag "quantity", @bk.quantity %>
+    <%= text_field_tag "Quantitiy", @bk.quantity %>
       <%= submit_tag("Update") %>
       <% end %>
     <h6>If this is left blank it will default to zero.</h6>

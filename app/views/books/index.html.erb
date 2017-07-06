@@ -1,5 +1,5 @@
 <h1>List of all books</h1>
-<h4>Select "view" next to a book to see a list of all libraries containing that book.</h4>
+<h4>Select a book to see a list of all libraries containing that book.</h4>
 
  <table>
    <thead>
@@ -10,13 +10,12 @@
    </thead>
 
    <tbody>
-
      <% @books.each.with_index(1) do |book, index| %>
        <tr>
          <% if current_user %>
            <td><%= index %>.  <%= link_to book.book_name, book %></td>
 
-           <td><%= link_to 'view', book %></td>
+
            <% if current_user == book.user_id %>
               <td><%= link_to 'Edit', edit_book_path(book) %></td>
               <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
